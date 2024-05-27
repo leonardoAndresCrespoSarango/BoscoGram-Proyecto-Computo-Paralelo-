@@ -353,8 +353,8 @@ La aplicación hace uso de las siguientes bibliotecas y servicios externos:
 - OkHttp: Para interactuar con servicios web y realizar solicitudes HTTP.
 - FileProvider: Para compartir archivos de forma segura entre diferentes aplicaciones.
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/android1,png)
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/android2,png)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/e581792970351cf1e8ff90c675dee72b998f6ce2/imagenes/android1.png)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/e581792970351cf1e8ff90c675dee72b998f6ce2/imagenes/android2.png)
 ## Conclusiones
 
 
