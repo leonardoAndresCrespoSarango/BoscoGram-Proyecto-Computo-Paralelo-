@@ -269,13 +269,13 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 1. Construir la imagen Docker:
 
     ```sh
-    docker build -t flask-cuda-app .
+    docker build -t examen_interciclo_computo_paralelo .   
     ```
 
 2. Ejecutar el contenedor Docker:
 
     ```sh
-    docker run --gpus all -p 5000:5000 flask-cuda-app
+    docker run --rm --gpus all -p 5000:5000 examen_interciclo_computo_paralelo        
     ```
 
 ### Uso de la Aplicación
