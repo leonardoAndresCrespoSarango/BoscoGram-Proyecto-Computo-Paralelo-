@@ -291,27 +291,27 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 ### Filtro Efecto Vintage
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage original.webp)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20vintage%20original.webp)
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage.webp)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20vintage.webp)
 
 ### Filtro Efecto Pintura de oleo
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo original.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20oleo%20original.jpg)
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20oleo.jpg)
 
 
 ### Filtro circulo con fondo blanco y negro
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo original.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/73536c6470db02ab4c2f1c59a4d4d75978084840/imagenes/filtro%20circulo%20original.jpg)
 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20circulo.jpg)
 
 
 ## Conclusiones
