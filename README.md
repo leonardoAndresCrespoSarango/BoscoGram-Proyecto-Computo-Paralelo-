@@ -314,6 +314,11 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro%20circulo.jpg)
 
 
+### Video 
+@[youtube]( ZYmIUiK8ZQI|https://www.youtube.com/watch?v=XfBYoJDryBc)
+
+## Android studio 
+
 ## Conclusiones
 
 
