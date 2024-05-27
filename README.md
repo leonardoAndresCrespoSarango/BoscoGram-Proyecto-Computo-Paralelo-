@@ -68,37 +68,93 @@ Posteriormente debemos crear las variables x e y, en donde se calcularán las co
 - int x = blockIdx.x * blockDim.x + threadIdx.x;
 - int y = blockIdx.y * blockDim.y + threadIdx.y;
 - blockIdx, blockDim y threadIdx
-- son propiedades CUDA que indican la posición del bloque y el hilo dentro de ese bloque. Estas líneas calculan las coordenadas (x, y) del pixel que se está procesando.
+  son propiedades CUDA que indican la posición del bloque y el hilo dentro de ese bloque. Estas líneas calculan las coordenadas (x, y) del pixel que se está procesando.
 
 2. Verificación de Límites:
 
 - if (x < width && y < height) {
-- Se asegura de que las coordenadas (x, y) estén dentro de los límites de la imagen.
+  Se asegura de que las coordenadas (x, y) estén dentro de los límites de la imagen.
   
 3. Cálculo del Índice del Pixel:
 
 - int idx = (y * width + x) * 3;
-- Calcula el índice del pixel en la matriz unidimensional. Cada pixel tiene 3 valores (r, g, b), por eso se multiplica por 3.
+  Calcula el índice del pixel en la matriz unidimensional. Cada pixel tiene 3 valores (r, g, b), por eso se multiplica por 3.
   
 4. Extracción de los Valores RGB:
 
 - float r = image[idx];
 - float g = image[idx + 1];
 - float b = image[idx + 2];
-- Se extraen los valores de los componentes rojo, verde y azul del pixel.
+  Se extraen los valores de los componentes rojo, verde y azul del pixel.
   
 5. Conversión a Escala de Grises:
 
 - float gray = 0.3f * r + 0.59f * g + 0.11f * b;
-- Convierte el pixel a un valor en escala de grises usando una fórmula ponderada comúnmente usada en el procesamiento de imágenes.
+  Convierte el pixel a un valor en escala de grises usando una fórmula ponderada comúnmente usada en el procesamiento de imágenes.
   
 6. Aplicación de Tinte Vintage:
 
 - image[idx] = gray + 35.0f;
 - image[idx + 1] = gray + 20.0f;
 - image[idx + 2] = gray - 20.0f;
-- Ajusta los valores de gris para cada canal de color para darle un efecto vintage. El canal rojo se incrementa más, seguido por el verde y finalmente el azul.
+  Ajusta los valores de gris para cada canal de color para darle un efecto vintage. El canal rojo se incrementa más, seguido por el verde y finalmente el azul.
 
+  #### Filtro Efecto pintura de oleo
+Como segundo filtro tenemos el efecto de pintura al óleo, en donde pasareos 2 puntos input y output que representarán la imagen de entrada y salida, pasamos el ancho y alto de la imagen, el radio que indica la extensión del área alrededor de cada pixél que será considerado para aplicar el efecto, además incluimos la variable levels que indicará la intensidad del efecto. 
 
+Luego una vez más tenemos las variables respectivas para el cálculo de las coordenadas globales del píxel que el hilo irá a procesar. Posterior a ello tenemos una condicional que verifica que los pixeles se encuentren dentro de los límites de la imagen. Dentro de la condicional debemos iniciar la variable histogram que contará la cantidad de pixeles con cada intensidad de color, y la variable intensity_sum almacenará la suma de los valores de cada componente de color para cada intensidad de color en la imagen.  
+
+Luego tendremos un bucle for que recorrerá todos los píxeles dentro de una vecindad centrada en el píxel actual. Para ello pasamos nuestra variable radius que determina cuantos píxeles hacia arriba, abajo a la izquierda y derecha se considerarán. Dentro de este bucle tenemos las variables px y py que calcularán las coordenadas del píxel vecino dentro del radio indicado, y una vez al índice idx se lo multiplicará por 3 debido a los 3 canales correspondientes. De igual manera tenemos las 3 variables r,g,b que obtendrán el valor del píxel en cada canal, además tenemos la variable intensity que es calculada por el promedio de las tres variables r,g,b, la cual proporciona una estimación de la cantidad total de "color" en el píxel, que se usa para actualizar el histograma y las sumas de intensidades.  luego deberemos actualizar las sumas de intensidades sumando los valores de cada componente de color a las respectivas sumas de intensidades para la intensidad calculada. 
+
+Seguidamente, tenemos un bucle que busca el valor de intensidad más frecuente en el histograma asignándola en la variable max_intensity. Con ello Se calcula el color promedio para la intensidad más frecuente utilizando las sumas de intensidades y el histograma, finalmente se realiza la asignación del color promedio al píxel de salida. Esto crea un efecto similar al de una pintura al óleo, donde los detalles finos se simplifican en áreas de color más uniforme. 
+
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/2.png)
+
+1. Identificación de la Posición del Pixel:
+
+- int x = blockIdx.x * blockDim.x + threadIdx.x;
+- int y = blockIdx.y * blockDim.y + threadIdx.y;
+2. Verificación de Límites:
+
+- if (x >= width || y >= height) return;
+  Si las coordenadas están fuera de los límites, el hilo termina.
+3. Inicialización de Histogramas e Intensity Sums:
+
+- int histogram[256] = {0};
+- int intensity_sum[256][3] = {0};
+  Arrays para almacenar la frecuencia de las intensidades y la suma de colores para cada intensidad.
+4. Cálculo del Histograma Local:
+
+- Itera sobre un vecindario definido por el radio (radius) alrededor del pixel actual.
+- for (int ky = -radius; ky <= radius; ky++)
+- for (int kx = -radius; kx <= radius; kx++)
+    - Para cada pixel en el vecindario:
+    - int px = min(max(x + kx, 0), width - 1);
+    - int py = min(max(y + ky, 0), height - 1);
+      Se asegura que las coordenadas del vecindario estén dentro de los límites de la imagen.
+          - Extrae los valores RGB y calcula la intensidad media.
+          - histogram[intensity]++;
+          - intensity_sum[intensity][0] += r;
+          - intensity_sum[intensity][1] += g;
+          - intensity_sum[intensity][2] += b;
+            Actualiza el histograma y las sumas de intensidad.
+5. Determinación de la Intensidad Más Frecuente:
+
+- int max_intensity = 0;
+- for (int i = 1; i < 256; i++)
+  Encuentra la intensidad con la mayor frecuencia en el histograma.
+6. Calculo del Color Promedio:
+
+- int r = intensity_sum[max_intensity][0] / histogram[max_intensity];
+- int g = intensity_sum[max_intensity][1] / histogram[max_intensity];
+- int b = intensity_sum[max_intensity][2] / histogram[max_intensity];
+  Calcula el color promedio de la intensidad más frecuente.
+7. Asignación del Nuevo Color:
+
+- int output_idx = (y * width + x) * 3;
+- output[output_idx] = r;
+- output[output_idx + 1] = g;
+- output[output_idx + 2] = b;
+  Asigna los valores de color calculados al pixel de salida.
 
 
