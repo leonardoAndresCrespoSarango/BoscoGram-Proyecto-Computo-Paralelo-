@@ -232,3 +232,16 @@ De la misma manera se define el metodo apply_circle_with_background_filter en do
 5. Configura el tamaño del bloque y la cuadrícula.
 6. Copia el resultado a la CPU.
 
+## Rutas de la Aplicación Flask
+
+- **`/upload/image`**: Carga una imagen y aplica el filtro vintage.
+- **`/upload/oil`**: Carga una imagen y aplica el efecto de pintura al óleo.
+- **`/upload/circle`**: Carga una imagen y aplica el filtro de círculo con fondo en blanco y negro.
+- ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/6.png)
+
+Una vez definidos los 3 métodos más que cargarán, procesarán las imágenes y guardarán el resultado final. Finalmente iniciamos un servidor Flask que será expuesto en el puerto 5000 y tendrá soporte SSL.
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/7.png)
+Nota: Hay que tener en cuenta que en nuestro caso optamos por utilizar NGROK que es un software locar para crear tuneles SSL (en pocas palabras  crear una ruta https segura para la comunicación entre ambas partes).
+Obtamos por utilizar un dominio statico, mas que nada para  obviar la parte de colocar un cuadro de texto en donde el usuario tenga que colocar la ip correspondiente al servidor: 
+`ngrok http --domain=penguin-healthy-iguana.ngrok-free.app 5000` 
+Como podemos observar basta con colcoar el puerto del servidor ya nuestro dominio sera estatico y asi facilitar el uso por parte del usuario
