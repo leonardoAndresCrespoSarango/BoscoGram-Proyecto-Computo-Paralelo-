@@ -287,6 +287,16 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 4. Seleccionar el filtro deseado (vintage, pintura al óleo o círculo con fondo en blanco y negro).
 5. Descargar la imagen procesada.
 6. Publicar la iamgen descargada
+## Resultados
+### Filtro Efecto Vintage
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage original.webp)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage.webp)
+### Filtro Efecto Pintura de oleo
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo original.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo.jpg)
+### Filtro circulo con fondo blanco y negro
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo original.jpg)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo.jpg)
 
 ## Conclusiones
 
