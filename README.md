@@ -355,6 +355,68 @@ La aplicación hace uso de las siguientes bibliotecas y servicios externos:
 
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/e581792970351cf1e8ff90c675dee72b998f6ce2/imagenes/android1.png)
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/e581792970351cf1e8ff90c675dee72b998f6ce2/imagenes/android2.png)
+# Descripción del Código
+
+Este archivo contiene el código fuente de una aplicación de Android desarrollada en Android Studio. La aplicación permite a los usuarios capturar imágenes, seleccionar imágenes de la galería, aplicar filtros a las imágenes seleccionadas y compartir o descargar las imágenes procesadas. A continuación se detallan las principales secciones del código:
+
+## Paquetes Importados
+
+El código comienza importando los paquetes necesarios para la aplicación, incluyendo clases de Android, herramientas de manejo de archivos, solicitudes HTTP y Retrofit, una biblioteca de cliente HTTP para Android.
+
+## Clase MainActivity
+
+La clase `MainActivity` es la actividad principal de la aplicación. Aquí se definen los elementos de la interfaz de usuario, como botones e imágenes, así como los métodos para manejar las interacciones del usuario.
+
+### Métodos onCreate y Configuración de Interfaz
+
+En el método `onCreate`, se configura la interfaz de usuario y se inicializan los elementos como botones e imágenes. Se establecen también los listeners de eventos para los botones.
+
+### Solicitar Permisos
+
+El método `checkPermissions` verifica si se han concedido los permisos necesarios para la aplicación, como el acceso a la cámara y al almacenamiento. Si los permisos no se han concedido, se solicitan al usuario.
+
+### Manejo de Respuestas a Solicitudes de Permisos
+
+El método `onRequestPermissionsResult` maneja las respuestas del usuario a las solicitudes de permisos. Si el usuario deniega los permisos, se le solicita que los habilite en la configuración de la aplicación.
+
+### Selección de Origen de la Imagen
+
+El método `showImageSourceDialog` muestra un diálogo que permite al usuario elegir entre tomar una foto con la cámara o seleccionar una imagen de la galería.
+
+### Captura de Imagen con la Cámara
+
+El método `takePhoto` inicia una actividad de captura de imagen utilizando la cámara del dispositivo y guarda la imagen en un archivo temporal.
+
+### Creación de Archivo de Imagen
+
+El método `createImageFile` crea un archivo temporal para almacenar la imagen capturada por la cámara.
+
+### Selección de Imagen de la Galería
+
+El método `pickImageFromGallery` inicia una actividad para permitir al usuario seleccionar una imagen de la galería de fotos del dispositivo.
+
+### Procesamiento de Respuestas a Actividades
+
+El método `onActivityResult` maneja las respuestas de las actividades de captura de imagen y selección de imágenes de la galería. Si se captura una imagen correctamente, se procesa y se carga en la interfaz de usuario.
+
+### Subida de Imagen a Servidor
+
+El método `uploadImage` crea una solicitud HTTP para subir la imagen procesada a un servidor web. Si la respuesta del servidor es exitosa, la imagen procesada se muestra en la interfaz de usuario.
+
+### Guardado de Imagen en la Galería
+
+El método `saveImageToGallery` guarda la imagen procesada en el directorio de imágenes del dispositivo.
+
+## Dependencias Externas
+
+La aplicación utiliza las siguientes bibliotecas externas:
+
+- Retrofit: Para realizar solicitudes HTTP a un servidor web.
+- OkHttp: Para interactuar con servicios web y realizar solicitudes HTTP.
+- FileProvider: Para compartir archivos de forma segura entre diferentes aplicaciones.
+
+## Nota: Cabe recalcar que todo lo dicho dentro de Android studio como clases. archvios xml siguen el mismo formato de diseño en cuanto a codigo para los tres diferentes filtros
+
 ## Conclusiones
 
 
