@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1271abb4-d077-4ed7-be8c-ca86baea787b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/examen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/outputs/oil_FB_IMG_1711567471017.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/outputs/oil_IMG_20240411_210726_175.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/outputs/oil_IMG_20240422_153009_429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/outputs/vintage_IMG_20240411_210726_175.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/outputs/vintage_influencer-their-pet-creating-content-online-spaces-social-media.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/FB_IMG_1711567471017.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/IMG_20240411_210726_175.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/IMG_20240422_153009_429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/uploads/influencer-their-pet-creating-content-online-spaces-social-media.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="HTML File" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gWkuJfaYZQO3D2xlr3FjkXGEq6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Flask server.examen.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="examen" type="Python.FlaskServer">
+      <module name="examen" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1271abb4-d077-4ed7-be8c-ca86baea787b" name="Changes" comment="" />
+      <created>1715820942927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715820942927</updated>
+      <workItem from="1715820944366" duration="30000" />
+      <workItem from="1715823255160" duration="31000" />
+      <workItem from="1715869332588" duration="3605000" />
+      <workItem from="1715955609189" duration="20000" />
+      <workItem from="1715978874321" duration="6071000" />
+      <workItem from="1715993737730" duration="34000" />
+      <workItem from="1715993800372" duration="1091000" />
+      <workItem from="1715995474566" duration="1740000" />
+      <workItem from="1716165157237" duration="4364000" />
+      <workItem from="1716177552595" duration="892000" />
+      <workItem from="1716180128896" duration="298000" />
+      <workItem from="1716180560867" duration="57000" />
+      <workItem from="1716234888340" duration="301000" />
+      <workItem from="1716325261680" duration="2000" />
+      <workItem from="1716400707931" duration="55000" />
+      <workItem from="1716587327352" duration="3299000" />
+      <workItem from="1716590833563" duration="153000" />
+      <workItem from="1716591091575" duration="88000" />
+      <workItem from="1716597397909" duration="10000" />
+      <workItem from="1716647331611" duration="2007000" />
+      <workItem from="1716681904309" duration="2612000" />
+      <workItem from="1716746820970" duration="1390000" />
+      <workItem from="1716776053080" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/examen$examen.coverage" NAME="examen Coverage Results" MODIFIED="1716746827303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
