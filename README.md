@@ -52,6 +52,9 @@ El kernel de CUDA para el filtro vintage toma tres parámetros:
 
 #### Funciones de Utilidad para Cargar y Guardar Imágenes
 
+![Logo](imgenes/1.png)
+
+
 
 
 
