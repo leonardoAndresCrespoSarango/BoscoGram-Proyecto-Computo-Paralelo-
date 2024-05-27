@@ -317,7 +317,43 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 ### Video 
 @[youtube](https://www.youtube.com/watch?v=XfBYoJDryBc)
 
-## Android studio 
+# Android studio 
+# Descripción de la Aplicación
+
+Esta aplicación de Android, desarrollada en Android Studio, permite a los usuarios capturar imágenes, seleccionar imágenes de la galería, aplicar filtros a las imágenes seleccionadas y compartir o descargar las imágenes procesadas. Utiliza diversas funciones del sistema operativo Android y hace uso de servicios web para aplicar filtros a las imágenes.
+
+## Funcionalidades Principales
+
+- Captura de imágenes mediante la cámara del dispositivo.
+- Selección de imágenes desde la galería de fotos.
+- Aplicación de filtros a las imágenes seleccionadas.
+- Compartir imágenes procesadas.
+- Descargar imágenes procesadas en el dispositivo.
+
+## Requisitos de Permiso
+
+La aplicación requiere los siguientes permisos para funcionar correctamente:
+
+- Permiso para acceder a la cámara del dispositivo.
+- Permiso para escribir en el almacenamiento externo.
+- Permiso para leer desde el almacenamiento externo.
+
+## Configuración y Uso
+
+1. Al iniciar la aplicación, se solicitarán los permisos necesarios en caso de no haber sido concedidos previamente.
+2. Los usuarios pueden seleccionar la opción de tomar una nueva foto o elegir una imagen de la galería.
+3. Una vez seleccionada la imagen, se ofrece la opción de aplicar filtros a la misma.
+4. Los usuarios pueden compartir la imagen procesada o descargarla en su dispositivo.
+
+## Dependencias Externas
+
+La aplicación hace uso de las siguientes bibliotecas y servicios externos:
+
+- Retrofit: Para realizar solicitudes HTTP a un servidor web.
+- OkHttp: Para interactuar con servicios web y realizar solicitudes HTTP.
+- FileProvider: Para compartir archivos de forma segura entre diferentes aplicaciones.
+
+
 
 ## Conclusiones
 
