@@ -280,10 +280,13 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 
 ### Uso de la Aplicación
 
-1. Acceder a la aplicación web en `http://localhost:5000`.
-2. Cargar una imagen desde la interfaz web.
-3. Seleccionar el filtro deseado (vintage, pintura al óleo o círculo con fondo en blanco y negro).
-4. Descargar la imagen procesada.
+1. Acceder a la aplicación web en `https://localhost:5000` (en caso de optar por utilizar la URL que ofrece Docker requiere modificacio URL en FrontEnd).
+1.1. Acceder directamente desde `https://penguin-healthy-iguana.ngrok-free.app` que es nuestro tunel SSL (Dominio estatico).
+2. Crear usuario o Iniciar sesion con las credenciales ya creadas.
+3. Cargar una imagen desde la interfaz.
+4. Seleccionar el filtro deseado (vintage, pintura al óleo o círculo con fondo en blanco y negro).
+5. Descargar la imagen procesada.
+6. Publicar la iamgen descargada
 
 ## Conclusiones
 
