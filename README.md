@@ -108,7 +108,7 @@ Luego tendremos un bucle for que recorrerá todos los píxeles dentro de una vec
 
 Seguidamente, tenemos un bucle que busca el valor de intensidad más frecuente en el histograma asignándola en la variable max_intensity. Con ello Se calcula el color promedio para la intensidad más frecuente utilizando las sumas de intensidades y el histograma, finalmente se realiza la asignación del color promedio al píxel de salida. Esto crea un efecto similar al de una pintura al óleo, donde los detalles finos se simplifican en áreas de color más uniforme. 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/2.png)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/3.png)
 
 1. Identificación de la Posición del Pixel:
 
@@ -161,7 +161,7 @@ Finalmente tenemos el tercer filtro, en donde se dibuja un círculo en el centro
 
 Una vez mas tenemos las variables x e y, en donde se calculan las coordenadas globales del píxel actual, una vez más tenemos una condicional que verificará que el píxel actual se encuentre dentro de los límites de la imagen, dentro de esta tenemos las variables dx y dy que se encargan de calcular las diferencias entre las coordenadas x y y del píxel actual y las coordenadas cx y cy del centro del círculo, y para calculor la distancia deberemos usar el teorema de Pitágoras en donde aplicaremos la raíz cuadrada de dx y dy. Posteriormente tenemos la condicional que verifica si la distancia es menor o igual al radio, significa que el píxel está dentro del círculo por lo que no se realizará nada, en cambio si los pixeles están fuera del círculo serán convertidos a blanco y negro para ello tenemos la variable gray_value que almacenará el valor de gris del píxel fuera del círculo, finalmente las últimas 3 líneas de código calculan el valor de gris del píxel utilizando una combinación ponderada de sus componentes de color y luego asignan este valor de gris a todos los componentes de color del píxel, convirtiendo así el color del píxel a blanco y negro. 
 
-![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/3.png)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/4.png)
 1. Identificación de la Posición del Pixel:
 
 - int x = threadIdx.x + blockIdx.x * blockDim.x;
