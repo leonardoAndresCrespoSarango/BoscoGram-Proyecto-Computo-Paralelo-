@@ -156,5 +156,33 @@ Seguidamente, tenemos un bucle que busca el valor de intensidad más frecuente e
 - output[output_idx + 1] = g;
 - output[output_idx + 2] = b;
   Asigna los valores de color calculados al pixel de salida.
+#### Filtro Circulo ocn Fondo blanco y negro
+Finalmente tenemos el tercer filtro, en donde se dibuja un círculo en el centro y todos los píxeles dentro del círculo mantendrán su color orginal y los píxeles de fuera estarán en blanco y negro. Para este filtro pasamos un puntero img, el ancho y alto de la imagen, así también se debe pasar las coordenadas del centro del círculo y la varibale raidus, es decir el radio del círculo. 
 
+Una vez mas tenemos las variables x e y, en donde se calculan las coordenadas globales del píxel actual, una vez más tenemos una condicional que verificará que el píxel actual se encuentre dentro de los límites de la imagen, dentro de esta tenemos las variables dx y dy que se encargan de calcular las diferencias entre las coordenadas x y y del píxel actual y las coordenadas cx y cy del centro del círculo, y para calculor la distancia deberemos usar el teorema de Pitágoras en donde aplicaremos la raíz cuadrada de dx y dy. Posteriormente tenemos la condicional que verifica si la distancia es menor o igual al radio, significa que el píxel está dentro del círculo por lo que no se realizará nada, en cambio si los pixeles están fuera del círculo serán convertidos a blanco y negro para ello tenemos la variable gray_value que almacenará el valor de gris del píxel fuera del círculo, finalmente las últimas 3 líneas de código calculan el valor de gris del píxel utilizando una combinación ponderada de sus componentes de color y luego asignan este valor de gris a todos los componentes de color del píxel, convirtiendo así el color del píxel a blanco y negro. 
 
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/3.png)
+1. Identificación de la Posición del Pixel:
+
+- int x = threadIdx.x + blockIdx.x * blockDim.x;
+- int y = threadIdx.y + blockIdx.y * blockDim.y;
+2. Verificación de Límites:
+
+- if (x < width && y < height) {
+3. Cálculo de la Distancia al Centro del Círculo:
+
+- int dx = x - cx;
+- int dy = y - cy;
+- float distance = sqrtf(dx*dx + dy*dy);
+  Calcula la distancia entre el pixel actual y el centro del círculo usando el teorema de Pitágoras.
+4. Condición Dentro/Fuera del Círculo:
+
+- if (distance <= radius) {
+  Si el pixel está dentro del radio del círculo, mantiene el color original.
+5. Conversión a Blanco y Negro:
+
+- unsigned char gray_value = (unsigned char)(0.299*img[(y * width + x) * 3] + 0.587*img[(y * width + x) * 3 + 1] + 0.114*img[(y * width + x) * 3 + 2]);
+- img[(y * width + x) * 3] = gray_value;
+- img[(y * width + x) * 3 + 1] = gray_value;
+- img[(y * width + x) * 3 + 2] = gray_value;
+  Si el pixel está fuera del círculo, convierte el color a escala de grises usando la fórmula ponderada común y asigna el valor gris a todos los canales RGB.
