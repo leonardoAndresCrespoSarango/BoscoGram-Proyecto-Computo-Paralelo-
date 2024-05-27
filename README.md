@@ -100,7 +100,7 @@ Posteriormente debemos crear las variables x e y, en donde se calcularán las co
   Ajusta los valores de gris para cada canal de color para darle un efecto vintage. El canal rojo se incrementa más, seguido por el verde y finalmente el azul.
 
   #### Filtro Efecto pintura de oleo
-Como segundo filtro tenemos el efecto de pintura al óleo, en donde pasareos 2 puntos input y output que representarán la imagen de entrada y salida, pasamos el ancho y alto de la imagen, el radio que indica la extensión del área alrededor de cada pixél que será considerado para aplicar el efecto, además incluimos la variable levels que indicará la intensidad del efecto. 
+Como segundo filtro tenemos el efecto de pintura al óleo, en donde pasaremos 2 puntos input y output que representarán la imagen de entrada y salida, pasamos el ancho y alto de la imagen, el radio que indica la extensión del área alrededor de cada pixél que será considerado para aplicar el efecto, además incluimos la variable levels que indicará la intensidad del efecto. 
 
 Luego una vez más tenemos las variables respectivas para el cálculo de las coordenadas globales del píxel que el hilo irá a procesar. Posterior a ello tenemos una condicional que verifica que los pixeles se encuentren dentro de los límites de la imagen. Dentro de la condicional debemos iniciar la variable histogram que contará la cantidad de pixeles con cada intensidad de color, y la variable intensity_sum almacenará la suma de los valores de cada componente de color para cada intensidad de color en la imagen.  
 
