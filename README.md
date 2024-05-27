@@ -417,6 +417,58 @@ La aplicación utiliza las siguientes bibliotecas externas:
 
 ## Nota: Cabe recalcar que todo lo dicho dentro de Android studio como clases. archvios xml siguen el mismo formato de diseño en cuanto a codigo para los tres diferentes filtros
 
+# Descripción del Código para el registro de usuarios
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/b9c669cf038fbdb35d2598c565c02a9a7bd6c011/imagenes/inicio.png)
+
+El archivo `FirstFragment.java` contiene la implementación de un fragmento en una aplicación Android que permite a los usuarios registrarse utilizando el correo electrónico y la contraseña. A continuación se describen las principales características y funcionalidades del código:
+
+## Clase FirstFragment
+
+La clase `FirstFragment` extiende `AppCompatActivity` y representa el fragmento principal de la aplicación donde se lleva a cabo el proceso de registro de usuarios.
+
+### Inicialización de Elementos de Interfaz de Usuario
+
+En el método `onCreate`, se inicializan los elementos de la interfaz de usuario, incluyendo los campos de entrada de correo electrónico y contraseña (`signupEmail` y `signupPassword` respectivamente), el botón de registro (`signupButton`) y el texto de redirección de inicio de sesión (`loginRedirectText`).
+
+### Manejo de Eventos de Click en el Botón de Registro
+
+Se registra un `OnClickListener` en el botón de registro (`signupButton`) para capturar el evento de clic. Cuando se hace clic en este botón, se obtienen los valores de correo electrónico y contraseña ingresados por el usuario. Si alguno de los campos está vacío, se muestra un mensaje de error en el campo respectivo. Si ambos campos están completos, se utiliza el objeto `FirebaseAuth` para crear una cuenta de usuario con el correo electrónico y la contraseña proporcionados. Se muestra un mensaje de éxito o fracaso según el resultado del proceso de registro.
+
+### Redirección al Fragmento de Inicio de Sesión
+
+También se registra un `OnClickListener` en el texto de redirección de inicio de sesión (`loginRedirectText`). Cuando se hace clic en este texto, se inicia una actividad que redirige al usuario al fragmento de inicio de sesión (`SecondFragment`).
+
+## Dependencias Externas
+
+El código hace uso de la biblioteca Firebase Authentication de Firebase, que proporciona una manera sencilla de autenticar a los usuarios en una aplicación.
+
+# Descripción del Código para el inicio de sesion de los usuarios
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/b9c669cf038fbdb35d2598c565c02a9a7bd6c011/imagenes/registro.png)
+
+El archivo `SecondFragment.java` contiene la implementación de otro fragmento en una aplicación Android que permite a los usuarios iniciar sesión utilizando su correo electrónico y contraseña. A continuación se describen las principales características y funcionalidades del código:
+
+## Clase SecondFragment
+
+La clase `SecondFragment` extiende `AppCompatActivity` y representa el fragmento secundario de la aplicación donde se lleva a cabo el proceso de inicio de sesión de los usuarios.
+
+### Inicialización de Elementos de Interfaz de Usuario
+
+En el método `onCreate`, se inicializan los elementos de la interfaz de usuario, incluyendo los campos de entrada de correo electrónico y contraseña (`loginEmail` y `loginPassword` respectivamente), el botón de inicio de sesión (`loginButton`), el texto de redirección de registro (`signupRedirectText`) y el texto para recuperar la contraseña (`forgotPassword`).
+
+### Manejo de Eventos de Click en el Botón de Inicio de Sesión
+
+Se registra un `OnClickListener` en el botón de inicio de sesión (`loginButton`) para capturar el evento de clic. Cuando se hace clic en este botón, se obtienen los valores de correo electrónico y contraseña ingresados por el usuario. Se verifica si ambos campos están completos y si el formato del correo electrónico es válido. Si los campos son válidos, se utiliza el objeto `FirebaseAuth` para iniciar sesión con el correo electrónico y la contraseña proporcionados. Se muestra un mensaje de éxito o fracaso según el resultado del proceso de inicio de sesión.
+
+### Redirección al Fragmento de Registro
+
+También se registra un `OnClickListener` en el texto de redirección de registro (`signupRedirectText`). Cuando se hace clic en este texto, se inicia una actividad que redirige al usuario al fragmento de registro (`FirstFragment`).
+
+## Dependencias Externas
+
+El código hace uso de la biblioteca Firebase Authentication de Firebase, que proporciona una manera sencilla de autenticar a los usuarios en una aplicación.
+
+
+
 ## Conclusiones
 
 
