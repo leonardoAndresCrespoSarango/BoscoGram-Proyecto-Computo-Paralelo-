@@ -238,10 +238,60 @@ De la misma manera se define el metodo apply_circle_with_background_filter en do
 - **`/upload/oil`**: Carga una imagen y aplica el efecto de pintura al óleo.
 - **`/upload/circle`**: Carga una imagen y aplica el filtro de círculo con fondo en blanco y negro.
 - ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/6.png)
-
+## Ejecución del Servidor
 Una vez definidos los 3 métodos más que cargarán, procesarán las imágenes y guardarán el resultado final. Finalmente iniciamos un servidor Flask que será expuesto en el puerto 5000 y tendrá soporte SSL.
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/7.png)
 Nota: Hay que tener en cuenta que en nuestro caso optamos por utilizar NGROK que es un software locar para crear tuneles SSL (en pocas palabras  crear una ruta https segura para la comunicación entre ambas partes).
 Obtamos por utilizar un dominio statico, mas que nada para  obviar la parte de colocar un cuadro de texto en donde el usuario tenga que colocar la ip correspondiente al servidor: 
-`ngrok http --domain=penguin-healthy-iguana.ngrok-free.app 5000` 
-Como podemos observar basta con colcoar el puerto del servidor ya nuestro dominio sera estatico y asi facilitar el uso por parte del usuario
+`ngrok http --domain=penguin-healthy-iguana.ngrok-free.app 5000` .
+Como podemos observar basta con colcoar el puerto del servidor ya nuestro dominio sera estatico y asi facilitar el uso por parte del usuario.
+### Dockerfile
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/dockerfile.png)
+Este archivo define la configuración del entorno Docker necesario para ejecutar la aplicación.
+
+#### Pasos Principales
+
+1. Utiliza la imagen base `nvidia/cuda:12.4.1-devel-ubuntu22.04`.
+2. Configura el directorio de trabajo y actualiza los paquetes.
+3. Instala las dependencias necesarias, incluyendo `pycuda` y otras bibliotecas de Python.
+4. Copia los archivos del proyecto al contenedor.
+5. Expone el puerto 5000 y define el comando para ejecutar la aplicación Flask.
+
+## Ejecución de la Aplicación
+
+### Requisitos Previos
+
+- Docker instalado en el sistema.
+- GPU compatible con CUDA.
+
+### Construcción y Ejecución con Docker
+
+1. Construir la imagen Docker:
+
+    ```sh
+    docker build -t flask-cuda-app .
+    ```
+
+2. Ejecutar el contenedor Docker:
+
+    ```sh
+    docker run --gpus all -p 5000:5000 flask-cuda-app
+    ```
+
+### Uso de la Aplicación
+
+1. Acceder a la aplicación web en `http://localhost:5000`.
+2. Cargar una imagen desde la interfaz web.
+3. Seleccionar el filtro deseado (vintage, pintura al óleo o círculo con fondo en blanco y negro).
+4. Descargar la imagen procesada.
+
+## Conclusiones
+
+Este proyecto demuestra cómo combinar Flask y CUDA para crear una aplicación web eficiente que aplica filtros de imágenes utilizando el procesamiento paralelo de la GPU. Docker facilita la configuración del entorno, asegurando que las dependencias y configuraciones necesarias estén disponibles de manera consistente.
+
+### Posibles Mejoras
+
+- Implementar una interfaz de usuario más amigable y atractiva.
+- Agregar más filtros y opciones de procesamiento de imágenes.
+- Optimizar aún más los kernels de CUDA para mejorar el rendimiento.
+- Incluir pruebas automatizadas para asegurar la robustez y calidad del código.
