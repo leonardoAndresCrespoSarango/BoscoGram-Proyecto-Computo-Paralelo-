@@ -54,7 +54,50 @@ El kernel de CUDA para el filtro vintage toma tres parámetros:
 
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/1.png)
 
+Estas funciones permiten cargar y guardar imágenes tanto con Pillow como con OpenCV.
 
+#### Filtro Vintage
+Como primer filtro hemos optado por un efecto vintage, para lo cual se tiene que definir el kernel pasando 3 parámetros, el ancho y alto de la imagen, además de un puntero image que contendrá la dirección de memoria de otra variable. 
+
+Posteriormente debemos crear las variables x e y, en donde se calcularán las coordenadas globales de x e y del hilo actual dentro la imagen que se está procesando. Luego tenemos una condicional en donde se asegura que solo los hilos que corresponden a pixeles dentro de los límites de la imagen realizarán su respectivo procesamiento. De igual manera tenemos un índice idx correspondiente a la posición en el arreglo image donde se almacenarán los valores de color RBG del píxel en las coordenadas(x,y), y debemos multiplicar por 3 ya que se tiene 3 canales. Luego definimos 3 variables flotantes r,g,b las cuales obtendrán el valor correspondiente al respectivo índice en los 3 canales, posteriormente convertiremos cada uno de los canales a escala de grises, en donde multiplicamos el valor del índice por una ponderación adecuada, en donde se debe dar mayor ponderación al verde ya que este canal tiene mayor influencia en la percepción del brillo. Finalmente, para aplicar el filtro debemos pasar nuestra variable gray para cada canal, a la cual se le sumará diferentes valores que harán que nuestra imagen tenga un color amarillento. 
+
+
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/2.png)
+1. Identificación de la Posición del Pixel:
+
+- int x = blockIdx.x * blockDim.x + threadIdx.x;
+- int y = blockIdx.y * blockDim.y + threadIdx.y;
+- blockIdx, blockDim y threadIdx
+- son propiedades CUDA que indican la posición del bloque y el hilo dentro de ese bloque. Estas líneas calculan las coordenadas (x, y) del pixel que se está procesando.
+
+2. Verificación de Límites:
+
+- if (x < width && y < height) {
+- Se asegura de que las coordenadas (x, y) estén dentro de los límites de la imagen.
+  
+3. Cálculo del Índice del Pixel:
+
+- int idx = (y * width + x) * 3;
+- Calcula el índice del pixel en la matriz unidimensional. Cada pixel tiene 3 valores (r, g, b), por eso se multiplica por 3.
+  
+4. Extracción de los Valores RGB:
+
+- float r = image[idx];
+- float g = image[idx + 1];
+- float b = image[idx + 2];
+- Se extraen los valores de los componentes rojo, verde y azul del pixel.
+  
+5. Conversión a Escala de Grises:
+
+- float gray = 0.3f * r + 0.59f * g + 0.11f * b;
+- Convierte el pixel a un valor en escala de grises usando una fórmula ponderada comúnmente usada en el procesamiento de imágenes.
+  
+6. Aplicación de Tinte Vintage:
+
+- image[idx] = gray + 35.0f;
+- image[idx + 1] = gray + 20.0f;
+- image[idx + 2] = gray - 20.0f;
+- Ajusta los valores de gris para cada canal de color para darle un efecto vintage. El canal rojo se incrementa más, seguido por el verde y finalmente el azul.
 
 
 
