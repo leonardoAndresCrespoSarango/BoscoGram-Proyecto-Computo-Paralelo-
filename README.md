@@ -466,8 +466,8 @@ También se registra un `OnClickListener` en el texto de redirección de registr
 ## Dependencias Externas
 
 El código hace uso de la biblioteca Firebase Authentication de Firebase, que proporciona una manera sencilla de autenticar a los usuarios en una aplicación.
-
-
+## Carpeta del proyecto de Android Studio con el archivo APK
+https://drive.google.com/drive/folders/1xhuwP4O8bi6cPDoXomlXpqxpDpneW8wY?usp=sharing
 
 ## Conclusiones
 
