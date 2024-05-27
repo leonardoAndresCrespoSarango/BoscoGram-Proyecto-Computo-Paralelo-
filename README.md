@@ -472,7 +472,7 @@ El código hace uso de la biblioteca Firebase Authentication de Firebase, que pr
 ## Conclusiones
 
 
-Este proyecto demuestra cómo combinar Flask y CUDA para crear una aplicación web eficiente que aplica filtros de imágenes utilizando el procesamiento paralelo de la GPU. Docker facilita la configuración del entorno, asegurando que las dependencias y configuraciones necesarias estén disponibles de manera consistente.
+Este proyecto demuestra cómo combinar Flask y CUDA para crear una aplicación Android eficiente que aplica filtros de imágenes utilizando el procesamiento paralelo de la GPU. Docker facilita la configuración del entorno, asegurando que las dependencias y configuraciones necesarias estén disponibles de manera consistente.
 
 ### Posibles Mejoras
 
