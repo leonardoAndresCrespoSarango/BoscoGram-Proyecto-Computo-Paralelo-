@@ -315,7 +315,7 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 
 
 ### Video 
-@[youtube]( ZYmIUiK8ZQI|https://www.youtube.com/watch?v=XfBYoJDryBc)
+@[youtube](https://www.youtube.com/watch?v=XfBYoJDryBc)
 
 ## Android studio 
 
