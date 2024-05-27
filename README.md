@@ -131,13 +131,13 @@ Seguidamente, tenemos un bucle que busca el valor de intensidad más frecuente e
     - Para cada pixel en el vecindario:
     - int px = min(max(x + kx, 0), width - 1);
     - int py = min(max(y + ky, 0), height - 1);
-      Se asegura que las coordenadas del vecindario estén dentro de los límites de la imagen.
-          - Extrae los valores RGB y calcula la intensidad media.
-          - histogram[intensity]++;
-          - intensity_sum[intensity][0] += r;
-          - intensity_sum[intensity][1] += g;
-          - intensity_sum[intensity][2] += b;
-            Actualiza el histograma y las sumas de intensidad.
+    - Se asegura que las coordenadas del vecindario estén dentro de los límites de la imagen.
+    - Extrae los valores RGB y calcula la intensidad media.
+    - histogram[intensity]++;
+    - intensity_sum[intensity][0] += r;
+    - intensity_sum[intensity][1] += g;
+    - intensity_sum[intensity][2] += b;
+    - Actualiza el histograma y las sumas de intensidad.
 5. Determinación de la Intensidad Más Frecuente:
 
 - int max_intensity = 0;
