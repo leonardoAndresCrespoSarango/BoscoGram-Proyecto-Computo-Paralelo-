@@ -186,3 +186,49 @@ Una vez mas tenemos las variables x e y, en donde se calculan las coordenadas gl
 - img[(y * width + x) * 3 + 1] = gray_value;
 - img[(y * width + x) * 3 + 2] = gray_value;
   Si el pixel está fuera del círculo, convierte el color a escala de grises usando la fórmula ponderada común y asigna el valor gris a todos los canales RGB.
+
+## Definición de Funciones
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/5.png)
+Una vez creados los 3 filtros, debemos definir las funciones que aplicarán cada uno de estos filtros. 
+
+En donde primero definimos apply_vintage_filter,y pasamos la imagen, de igual manera deberemos iniciar cuda, luego de ello, calculamos el  ancho y alto con el .shape. Posteriormente enimage_gpu debemos asignar la memmoria en la GPU, y luego copiar los datos a la gpu. Luego se debe compilar y ejecutar el kernel además que  se debe realiar la configuracion del bloque e hilo: block_size = (16, 16, 1) 
+grid_size = (int(np.ceil(width / 16)), int(np.ceil(height / 16)), 1) en donde pasamos 16 hilos para x e y, y para x 1 hilo. Luego el tamaño del bloque se calculará automaciamente. Finalmente copiamos el resultado a la cpu. 
+
+De igual manera definimos  apply_circle apply_oil_painting_effect  
+
+_with_background_filter, pero en este caso pasamos un radio de 3 y levels de 256. Y realizamos los mismos pasos que el anterior método, a diferencia que al compilar el mpetodo se debe pasar los valores de radius y levels.  
+
+ 
+
+De la misma manera se define el metodo apply_circle_with_background_filter en donde pasamos la imagen, el radius y las cooredenadas del centro en x e y,  y se realizamos los mismos pasos especificados en los métodos anteriores. 
+
+
+### Funciones de Filtro
+
+#### `apply_vintage_filter(image_np)`
+
+1. Inicializa CUDA.
+2. Calcula el ancho y alto de la imagen.
+3. Asigna memoria en la GPU y copia los datos.
+4. Compila y ejecuta el kernel.
+5. Configura el tamaño del bloque y la cuadrícula.
+6. Copia el resultado a la CPU.
+
+#### `apply_oil_painting_effect(image, radius, levels)`
+
+1. Inicializa CUDA.
+2. Calcula el ancho y alto de la imagen.
+3. Asigna memoria en la GPU y copia los datos.
+4. Compila y ejecuta el kernel.
+5. Configura el tamaño del bloque y la cuadrícula.
+6. Copia el resultado a la CPU.
+
+#### `apply_circle_with_background_filter(image, radius, cx, cy)`
+
+1. Inicializa CUDA.
+2. Calcula el ancho y alto de la imagen.
+3. Asigna memoria en la GPU y copia los datos.
+4. Compila y ejecuta el kernel.
+5. Configura el tamaño del bloque y la cuadrícula.
+6. Copia el resultado a la CPU.
+
