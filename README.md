@@ -289,16 +289,33 @@ Este archivo define la configuración del entorno Docker necesario para ejecutar
 6. Publicar la iamgen descargada
 ## Resultados
 ### Filtro Efecto Vintage
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage original.webp)
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro vintage.webp)
+
 ### Filtro Efecto Pintura de oleo
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo original.jpg)
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro oleo.jpg)
+
+
 ### Filtro circulo con fondo blanco y negro
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo original.jpg)
+
+
 ![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/filtro circulo.jpg)
 
+
 ## Conclusiones
+
 
 Este proyecto demuestra cómo combinar Flask y CUDA para crear una aplicación web eficiente que aplica filtros de imágenes utilizando el procesamiento paralelo de la GPU. Docker facilita la configuración del entorno, asegurando que las dependencias y configuraciones necesarias estén disponibles de manera consistente.
 
