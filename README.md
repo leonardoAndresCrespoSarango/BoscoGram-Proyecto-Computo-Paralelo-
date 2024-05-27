@@ -52,7 +52,7 @@ El kernel de CUDA para el filtro vintage toma tres parámetros:
 
 #### Funciones de Utilidad para Cargar y Guardar Imágenes
 
-![Logo](imgenes/1.png)
+![Logo](https://github.com/leonardoAndresCrespoSarango/BoscoGram-Servidor/blob/1ed283c00b7a894b34eeb11f82bd3c4b0f83a5b9/imagenes/1.png)
 
 
 
